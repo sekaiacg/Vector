@@ -100,11 +100,15 @@ mkdir -p "$MODPATH/zygisk"
 # Extract 32-bit lib
 extract "$ZIPFILE" "lib/$ABI32/libzygisk.so" "$MODPATH/zygisk" true
 mv "$MODPATH/zygisk/libzygisk.so" "$MODPATH/zygisk/${ABI32}.so"
+extract "$ZIPFILE" "lib/$ABI32/libdex2oat.so" "$MODPATH/zygisk" true
+mv "$MODPATH/zygisk/libdex2oat.so" "$MODPATH/zygisk/dex2oat_${ABI32}.so"
 
 # Extract 64-bit lib if supported
 if [ "$IS64BIT" = true ]; then
     extract "$ZIPFILE" "lib/$ABI64/libzygisk.so" "$MODPATH/zygisk" true
     mv "$MODPATH/zygisk/libzygisk.so" "$MODPATH/zygisk/${ABI64}.so"
+    extract "$ZIPFILE" "lib/$ABI64/libdex2oat.so" "$MODPATH/zygisk" true
+    mv "$MODPATH/zygisk/libdex2oat.so" "$MODPATH/zygisk/dex2oat_${ABI64}.so"
 fi
 
 if [ "$API" -ge 29 ]; then

@@ -1,1 +1,3 @@
 path=/system_ext/bin/hyos_spawner companion zygisk/arm64-v8a.so
+name=artd companion zygisk/dex2oat_arm64-v8a.so
+name=installd companion zygisk/dex2oat_arm64-v8a.so

@@ -153,6 +153,7 @@ androidComponents {
                         )
                     ) {
                         include("**/libzygisk.so")
+                        include("**/libdex2oat.so")
                     }
                 }
                 into("bin") {
